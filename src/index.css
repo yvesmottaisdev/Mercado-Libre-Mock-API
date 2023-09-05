@@ -1,4 +1,5 @@
 body {
+  width: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,8 +13,136 @@ code {
     monospace;
 }
 
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
 .item_holder{
 
-  background-color: aqua;
+  width: 18rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  border: 1px solid #bfbfbf;
+  transition: .1s;
+  position: relative;
 
+}
+
+.item_image_holder{
+  width: 18rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item_text_holder{
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid #e6e3e3;
+
+}
+
+.item_image_l{
+  width: 15rem;
+  height: auto;
+  padding: 1rem;
+}
+.item_image_m{
+  width: 10rem;
+  height: auto;
+  padding: 1rem;
+}
+.item_image_s{
+  width: 5.5rem;
+  height: auto;
+  padding: 1rem;
+}
+
+.item_name{
+  font-size: .9rem;
+  font-weight: 600;
+  padding: 1rem 1rem .2rem 1rem;
+  margin: 0;
+  color: #2c2b2b;
+}
+
+.item_description{
+  font-size: .85rem;
+  color: #747474;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.item_text_inner_holder{
+  padding: 0;
+  margin: 0;
+}
+
+.item_list_holder{
+
+  width: fit-content;
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+  grid-auto-flow: dense;
+  list-style: none;
+  margin: 1rem;
+  /* padding: 5rem; */
+}
+
+.item_price{
+  font-size: .8rem;
+  color: #747474;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.add_item_button{
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  margin: 0;
+  border: none;
+  border-top: 1px solid #e6e3e3;
+  background-color: #ffffff;
+
+}
+
+.add_item_button:hover{
+  background-color: #1b1717;
+}
+
+.add_item_button:hover > .item_price{
+  color: #ffffff;
+}
+
+.item_tag_holder{
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: inherit;
+  height: auto;
+  background-color: #fbf183;
+  border-bottom: 1px solid  #dccf46;
+}
+
+.item_tag{
+  color: #1b1717;
+  font-size: .7rem;
+  padding: .5rem;
+  font-weight: 400;
+  margin: 0;
 }
