@@ -39,6 +39,12 @@ a{
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: .2s;
+}
+
+.item_holder:hover > .item_image_holder{
+ 
+  transform: scale(1.03);
 }
 
 .item_text_holder{

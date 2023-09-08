@@ -8,6 +8,8 @@ const data = [
         price: 399,
         size: 'm',
         tag: 'From the Spring Collection',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -18,6 +20,8 @@ const data = [
         price: 2099,
         size: 'l',
         tag: '',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -28,6 +32,8 @@ const data = [
         price: 520,
         size: 'm',
         tag: 'New entry',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -38,6 +44,8 @@ const data = [
         price: 3990,
         size: 'l',
         tag: '',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -48,6 +56,8 @@ const data = [
         price: 5399,
         size: 'l',
         tag: '',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -58,6 +68,8 @@ const data = [
         price: 9.99,
         size: 's',
         tag: '',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -68,6 +80,8 @@ const data = [
         price: 2099,
         size: 'l',
         tag: 'An everyone favorite',
+        total_quantity: 5,
+        quantity: 0,
         
     },
     {
@@ -78,6 +92,8 @@ const data = [
         price: 789,
         size: 'm',
         tag: '',
+        total_quantity: 5,
+        quantity: 0,
         
     },
 
