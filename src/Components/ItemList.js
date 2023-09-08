@@ -1,13 +1,11 @@
 import { React, useState } from 'react'
-import items from '../Data/Item_Data'
+import data from '../Data/Item_Data'
 import Item from './Item'
-import Button from './Button'
-
 import '../index.css'
 
 const ItemList = () => {
 
-    const [item, setItem] = useState(items);
+    const [item, setItem] = useState(data);
 
     return(
 

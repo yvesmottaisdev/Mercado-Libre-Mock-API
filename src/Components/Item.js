@@ -4,7 +4,7 @@ import '../index.css'
 
 const Item = (props) => {
 
-    const {item_name, description, image, price, size, tag, total_quantity,} = props;
+    const {item_name, description, image, price, size, tag, total_quantity} = props;
 
     return(
         <div className='item_holder'>
