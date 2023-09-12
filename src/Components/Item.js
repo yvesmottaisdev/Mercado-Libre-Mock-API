@@ -19,7 +19,7 @@ const Item = (props) => {
             </div>
             <div className='item_text_holder'>
                 <div className='item_text_inner_holder'>
-                <p className='item_review'>Costumers rated this item a {review}/5</p>
+                <p className='item_review'>Costumer rated {review}/5</p>
                     <a href={image}><p className='item_name'>{item_name}</p></a>
                     <p className='item_description'>{description}</p>
                     <p className='item_price'><span className='symbol'>£</span>{price} <span className='stock'>In stock ({total_quantity})</span></p>
