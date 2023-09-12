@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button'
 import '../index.css'
 
 const Item = (props) => {
 
     const {item_name, description, image, price, size, tag, total_quantity, review} = props;
-
     return(
         <div className='item_holder'>
             {
