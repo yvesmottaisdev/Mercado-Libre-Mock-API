@@ -4,7 +4,7 @@ import '../index.css'
 
 const Item = (props) => {
 
-    const {item_name, description, image, price, size, tag, total_quantity} = props;
+    const {item_name, description, image, price, size, tag, total_quantity, review} = props;
 
     return(
         <div className='item_holder'>
@@ -19,8 +19,10 @@ const Item = (props) => {
             </div>
             <div className='item_text_holder'>
                 <div className='item_text_inner_holder'>
+                <p className='item_review'>Costumers rated this item a {review}/5</p>
                     <a href={image}><p className='item_name'>{item_name}</p></a>
                     <p className='item_description'>{description}</p>
+                    <p className='item_price'><span className='symbol'>£</span>{price} <span className='stock'>In stock ({total_quantity})</span></p>
                 </div>
                 <Button total_quantity={total_quantity} price={price} />
             </div>

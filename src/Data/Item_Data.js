@@ -7,9 +7,10 @@ const data = [
         image: 'https://www.ikea.com/es/es/images/products/blasverk-lampara-mesa-beige__1150245_pe884435_s5.jpg?f=l',
         price: 399,
         size: 'm',
-        tag: 'From the Spring Collection',
-        total_quantity: 5,
+        tag: 'From the Autumn Collection',
+        total_quantity: 205,
         quantity: 0,
+        review: '4',
         
     },
     {
@@ -20,8 +21,9 @@ const data = [
         price: 2099,
         size: 'l',
         tag: '',
-        total_quantity: 5,
+        total_quantity: 192,
         quantity: 0,
+        review: '4',
         
     },
     {
@@ -33,7 +35,8 @@ const data = [
         size: 'm',
         tag: 'New entry',
         total_quantity: 5,
-        quantity: 0,
+        quantity: 399,
+        review: '3',
         
     },
     {
@@ -45,7 +48,8 @@ const data = [
         size: 'l',
         tag: '',
         total_quantity: 5,
-        quantity: 0,
+        quantity: 97,
+        review: '4',
         
     },
     {
@@ -57,7 +61,8 @@ const data = [
         size: 'l',
         tag: '',
         total_quantity: 5,
-        quantity: 0,
+        quantity: 26,
+        review: '5',
         
     },
     {
@@ -69,7 +74,8 @@ const data = [
         size: 's',
         tag: '',
         total_quantity: 5,
-        quantity: 0,
+        quantity: 243,
+        review: '3',
         
     },
     {
@@ -79,9 +85,10 @@ const data = [
         image: 'https://www.ikea.com/es/es/images/products/nordkisa-armario-abierto-puerta-corredera-bambu__0756084_pe748766_s5.jpg?f=xl',
         price: 2099,
         size: 'l',
-        tag: 'An everyone favorite',
-        total_quantity: 5,
+        tag: 'From the Spring Collection',
+        total_quantity: 164,
         quantity: 0,
+        review: '4',
         
     },
     {
@@ -92,8 +99,10 @@ const data = [
         price: 789,
         size: 'm',
         tag: '',
-        total_quantity: 5,
+        total_quantity: 329,
         quantity: 0,
+        review: '5',
+
         
     },
 
