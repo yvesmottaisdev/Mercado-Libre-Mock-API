@@ -33,7 +33,6 @@ const Button = (props) => {
 
 	}
 
-
 	return (
 		<>
 			<div className="add_item">
