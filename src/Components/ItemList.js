@@ -24,28 +24,10 @@ const options = {
 const ItemList = () => {
 
     const [items, setItems] = useState([]);
-    
-    // const getItems = async () => {
-    //     const response = await fetch(url);
-    //     const data = await response.json();
 
-    //     console.log(data)
-
-    //     return data;
-    // }
-
-    // useEffect(() => {
-    //     const fetchItems = async () => {
-    //         const data = await getItems();
-    //         setItems(data.products);
-    //     }
-
-    //     fetchItems();
-    // },[]);
-
-    const fetchItems = () => {
+    const fetchItems = async () => {
         
-        return axios.request(options)
+        return await axios.request(options)
             .then(response => response.data.results)
             .catch(e => {
                 console.log(e);
@@ -74,7 +56,7 @@ const ItemList = () => {
                          rating={0}
                          description={'pepe'}
                          price={item.price.value}
-                         stock={item.stock.stockLevel}
+                         stock={Math.floor(Math.random() * 100)}
                          thumbnail={item.images[0].baseUrl}/>
                 )
             })}
