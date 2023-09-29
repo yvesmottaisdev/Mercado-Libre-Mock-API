@@ -3,7 +3,6 @@ import axios from 'axios'
 import Item from './Item'
 import '../index.css'
 
-const url = 'https://dummyjson.com/products';
 const options = {
 
     method: 'GET',
@@ -36,7 +35,7 @@ const ItemList = () => {
     }
 
     useEffect(() => {
-
+ 
         fetchItems()
             .then(data => {
                 setItems(data);
@@ -61,8 +60,8 @@ const ItemList = () => {
                 )
             })}
         </div>
-    );
+    );      
 
 }
-// id, thumbnail, title, rating, description, price, stock
+
 export default ItemList;
