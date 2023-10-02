@@ -13,7 +13,7 @@ const Item = (props) => {
             </div>
             <div className='item_text_holder'>
                 <div className='item_text_inner_holder'>
-                    <p className='item_review'>Costumer rated {rating}/5</p>
+                    <p className='item_review'></p>
                     <p className='item_name'>{title}</p>
                     <p className='item_description'>{description}</p>
                     <p className='item_price'><span className='symbol'>£</span>{price} <span className='stock'>In stock ({stock})</span></p>

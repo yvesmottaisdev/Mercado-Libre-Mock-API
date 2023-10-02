@@ -11,7 +11,7 @@ const options = {
         country: 'us',
         lang: 'en',
         currentpage: '0',
-        pagesize: '30',
+        pagesize: '120',
     },
     headers: {
         'X-RapidAPI-Key': '786f2d1c44msh787c645bf650a0bp1049bfjsn2b8f004236fb',
@@ -24,26 +24,24 @@ const ItemList = () => {
 
     const [items, setItems] = useState([]);
 
-    const fetchItems = async () => {
+    const fetchItems = async (options) => {
         
         return await axios.request(options)
             .then(response => response.data.results)
             .catch(e => {
                 console.log(e);
             })
-
     }
 
     useEffect(() => {
  
-        fetchItems()
+        fetchItems(options)
             .then(data => {
                 setItems(data);
             })
             .catch( e => {
                 throw e
             })
-
     }, []);
 
     return(
