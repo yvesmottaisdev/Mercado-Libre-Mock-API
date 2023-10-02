@@ -6,14 +6,12 @@ const Button = (props) => {
 	const { total_quantity } = props;
 
 	const [quantity, setQuantity] = useState(0);
-	const [message, setMessage] = useState(false);
 
 	function handleAddItem() {
 
 		if(quantity === total_quantity)
 		{
 			setQuantity(quantity);
-			setMessage(true);
 			return;
 		} 
 
@@ -29,7 +27,6 @@ const Button = (props) => {
 		}
 		
 		setQuantity(quantity - 1);
-		setMessage(false);
 
 	}
 
@@ -40,12 +37,6 @@ const Button = (props) => {
 				<p className="item_quantity">{quantity}</p>
 				<button className="item_button" onClick={handleDeleteItem}>-</button>
 			</div>
-			{message && (
-				<p className="out_of_stock">
-					You've reached the maximum quantity of this product you can add into
-					your cart
-				</p>
-			)}
 		</>
 	);
 };
