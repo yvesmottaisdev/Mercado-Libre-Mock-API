@@ -4,19 +4,19 @@ import Category from './Category'
 import LoadingCategory from './LoadingCategory'
 import '../index.css'
 
-const options = {
-    method: 'GET',
-    url: 'https://unofficial-shein.p.rapidapi.com/navigations/get-tabs',
-    params: {
-      language: 'en',
-      country: 'US',
-      currency: 'USD'
-    },
-    headers: {
-      'X-RapidAPI-Key': '786f2d1c44msh787c645bf650a0bp1049bfjsn2b8f004236fb',
-      'X-RapidAPI-Host': 'unofficial-shein.p.rapidapi.com'
-    }
-  };
+// const options = {
+//     method: 'GET',
+//     url: 'https://unofficial-shein.p.rapidapi.com/navigations/get-tabs',
+//     params: {
+//       language: 'en',
+//       country: 'US',
+//       currency: 'USD'
+//     },
+//     headers: {
+//       'X-RapidAPI-Key': '786f2d1c44msh787c645bf650a0bp1049bfjsn2b8f004236fb',
+//       'X-RapidAPI-Host': 'unofficial-shein.p.rapidapi.com'
+//     }
+//   };
 
 const Categories = () => {
 
@@ -25,11 +25,15 @@ const Categories = () => {
 
     const fetchItems = async () => {
         
-        return await axios.request(options)
-            .then(response => response.data.info.tabs)
-            .catch(e => {
-                console.log(e);
-            })
+        return await axios.get('https://api.mercadolibre.com/sites/MLU/categories', {
+            headers: {
+                'Authorization': 'Bearer' + process.env.ACCESS_TOKEN
+            }
+        })
+        .then(response => response.data)
+        .catch(e => {
+            console.log(e);
+        })
     }
     useEffect(() => {
  
@@ -45,8 +49,9 @@ const Categories = () => {
     if(!loading){
         return (
             <div className='wrapper'>
-                <img className='brand-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Shein-logo.png/640px-Shein-logo.png'/>
+                <img className='brand-logo' src='https://companieslogo.com/img/orig/MELI-ec0c0e4f.png?t=1648156112'/>
                 <div className='categories'>
+                    <p className='category-title'>Categorias</p>
                 {
                     categories.map((category) => {
                         return (
@@ -64,7 +69,7 @@ const Categories = () => {
     } else {
         return (
         <div className='wrapper'>
-            <img className='brand-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Shein-logo.png/640px-Shein-logo.png'/>
+            <img className='brand-logo' src='https://companieslogo.com/img/orig/MELI-ec0c0e4f.png?t=1648156112'/>
             <div className='categories'>
                 <LoadingCategory/>
             </div>

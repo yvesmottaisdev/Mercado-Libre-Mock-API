@@ -6,10 +6,11 @@
 body {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
   margin: 0;
+  padding: 0 5rem;
 }
 
 a{
@@ -19,6 +20,9 @@ a{
 
 .brand-logo{
   width: 4rem;
+  position: absolute;
+  top: 3rem;
+  left: 50%;
 }
 
 .item_holder{
@@ -47,14 +51,18 @@ a{
 
 .item_image_holder{
   width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 20rem;
-  background-color: #bfbfbf;
+  background-color: #ffffff;
 }
 
 .item_image{
-  width: inherit;
-  height: inherit;
-  object-fit: cover;
+  width: 13rem;
+  height: auto;
+  /* object-fit: cover; */
 }
 
 .item_text_holder{
@@ -248,21 +256,23 @@ a{
   width: auto;
   height: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 3rem 0;
   margin: 0;
 }
 
 .category-holder{
-  width: 5rem;
+  width: 20rem;
   height: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   transition: .3s;
+  padding: 1rem 0;
+
 }
 
 .category-button{
@@ -270,11 +280,12 @@ a{
   width: inherit;
   height: inherit;
   border: none;
+  text-align: left;
   background-color: #ffffff;
   font-size: .9rem;
   font-weight: 400;
   color: #525151;
-  margin: 1rem;
+  cursor: pointer;
 
 }
 
