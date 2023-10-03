@@ -10,7 +10,7 @@ const LoadingComponent = () => {
       return (
         <div className='loading_item_holder'>
           <div className='loading_item_image_holder'>
-              <img className='loading_item_image'/>
+              <img className='loading_item_image' alt=''/>
           </div>
           <div className='loading_item_text_holder'>
               <div className='loading_item_text_inner_holder'>

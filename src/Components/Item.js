@@ -12,13 +12,13 @@ const Item = (props) => {
         {
             setAvailable(false);
         }
-    }, []);
+    }, [stock]);
     
     return(
         <div className='item_holder'>
             <div className='main-content'>
                 <div className='item_image_holder'>
-                    <img className='item_image' src={thumbnail} alt={title}/>
+                    <img className='item_image' src={thumbnail} alt=''/>
                 </div>
                 <div className='item_text_holder'>
                     <div className='item_text_inner_holder'>
