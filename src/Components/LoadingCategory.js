@@ -2,7 +2,7 @@ import React from 'react'
 import '../index.css'
 
 const LoadingCategory = () => {
-const q_cat = 7;
+const q_cat = 20;
 
     return (
         [...Array(q_cat)].map(e => {

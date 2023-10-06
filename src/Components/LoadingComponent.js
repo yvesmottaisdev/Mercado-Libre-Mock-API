@@ -1,7 +1,7 @@
 import React from 'react'
 import '../index.css'
 
-const q = 3;
+const q = 20;
 
 const LoadingComponent = () => {
 
@@ -14,9 +14,10 @@ const LoadingComponent = () => {
           </div>
           <div className='loading_item_text_holder'>
               <div className='loading_item_text_inner_holder'>
-                  <p className='loading_item_name'></p>
-                  <p className='loading_item_description'></p>
-                  <p className='loading_item_price'></p>
+                  <p className='loading_item_name'>&nbsp;</p>
+                  <p className='loading_item_name'>&nbsp;</p>
+                  <p className='loading_item_name'>&nbsp;</p>
+                  <p className='loading_item_price'>&nbsp;</p>
               </div>
           </div>
       </div>

@@ -1,13 +1,23 @@
 import React from 'react'
 import '../index.css'
 
-const Category = (props) => {
+const Category = ( props ) => {
 
-    const { name, value } = props;
+    const { name, value, sendCategoryValue } = props;
+
+    const handleGetValue = (e) => {
+
+        e.preventDefault();
+
+        const categoryValue = e.target.value;
+
+        sendCategoryValue(categoryValue);
+        
+    }
 
     return (
         <div className='category-holder'>
-            <button value={value} className='category-button'>
+            <button value={value} className='category-button' onClick={handleGetValue}>
                 {name}
             </button>
         </div>

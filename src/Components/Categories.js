@@ -3,25 +3,20 @@ import axios from 'axios'
 import Category from './Category'
 import LoadingCategory from './LoadingCategory'
 import '../index.css'
-
-// const options = {
-//     method: 'GET',
-//     url: 'https://unofficial-shein.p.rapidapi.com/navigations/get-tabs',
-//     params: {
-//       language: 'en',
-//       country: 'US',
-//       currency: 'USD'
-//     },
-//     headers: {
-//       'X-RapidAPI-Key': '786f2d1c44msh787c645bf650a0bp1049bfjsn2b8f004236fb',
-//       'X-RapidAPI-Host': 'unofficial-shein.p.rapidapi.com'
-//     }
-//   };
+import { useApplyContext } from '../Context/AppContext'
 
 const Categories = () => {
-
+    
     const [categories, setCategories] = useState([]);
+    const {handleCategory } = useApplyContext();
+    
     const [loading, setLoading] = useState(true);
+
+    const handleCategoryValue = (data) => {
+
+        handleCategory(data)
+
+    }
 
     const fetchItems = async () => {
         
@@ -35,6 +30,7 @@ const Categories = () => {
             console.log(e);
         })
     }
+
     useEffect(() => {
  
         fetchItems()
@@ -48,32 +44,29 @@ const Categories = () => {
 
     if(!loading){
         return (
-            <div className='wrapper'>
-                <img className='brand-logo' src='https://companieslogo.com/img/orig/MELI-ec0c0e4f.png?t=1648156112'/>
-                <div className='categories'>
-                    <p className='category-title'>Categorias</p>
-                {
-                    categories.map((category) => {
-                        return (
-                            <Category 
-                            key={category.id}
-                            name={category.name}
-                            value={category.cat_id}
-                        />
-                        )
-                    }) 
-                }
-                </div>
+            <div className='categories'>
+                <p className='category-title'>Categorias</p>
+            
+            {
+                categories.map((category) => {
+                    return (
+                        <Category 
+                        key={category.id}
+                        name={category.name}
+                        value={category.id}
+                        sendCategoryValue={handleCategoryValue}
+                    />
+                    )
+                }) 
+            }
             </div>
         )
     } else {
         return (
-        <div className='wrapper'>
-            <img className='brand-logo' src='https://companieslogo.com/img/orig/MELI-ec0c0e4f.png?t=1648156112'/>
             <div className='categories'>
+                <p className='category-title'>Categorias</p>
                 <LoadingCategory/>
             </div>
-        </div>
         )
     }
 }
