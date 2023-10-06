@@ -14,6 +14,8 @@ const ItemList = () => {
 
     const fetchItems = async () => {
         
+        setLoading(true)
+
         return await axios.get('https://api.mercadolibre.com/sites/MLU/search', {
             params: {
               'category': sendCategory ? sendCategory : 'MLU1000'

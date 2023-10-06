@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import '../index.css'
 
 const Category = ( props ) => {
@@ -8,9 +8,7 @@ const Category = ( props ) => {
     const handleGetValue = (e) => {
 
         e.preventDefault();
-
         const categoryValue = e.target.value;
-
         sendCategoryValue(categoryValue);
         
     }
