@@ -5,7 +5,6 @@ import Categories from './Components/Categories';
 import ItemList from './Components/ItemList';
 import Logo from './Components/Logo'
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,4 +20,3 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals();

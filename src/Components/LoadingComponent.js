@@ -8,7 +8,7 @@ const LoadingComponent = () => {
   return(
     [...Array(q)].map((e, i) => {
       return (
-        <div className='loading_item_holder'>
+        <div className='loading_item_holder' key={i}>
           <div className='loading_item_image_holder'>
               <img className='loading_item_image' alt=''/>
           </div>
