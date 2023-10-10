@@ -11,23 +11,40 @@ const ItemList = () => {
     const [loading, setLoading] = useState(true);
 
     const {sendCategory } = useApplyContext();
+    const {sendQuery} = useApplyContext();
 
     const fetchItems = async () => {
         
         setLoading(true)
 
-        return await axios.get('https://api.mercadolibre.com/sites/MLU/search', {
-            params: {
-              'category': sendCategory ? sendCategory : 'MLU1000'
-            },
+        if(sendQuery && sendQuery.length > 0){
+
+            const formattedQuery = sendQuery.replaceAll(" ", "%20");
+
+            return await axios.get('https://api.mercadolibre.com/sites/MLU/search?q=' + formattedQuery, {
             headers: {
                 'Authorization': 'Bearer' + process.env.ACCESS_TOKEN
             }
-          })
-        .then(response => response.data.results)
-        .catch(e => {
-            console.log(e);
-        })
+            })
+            .then(response => response.data.results)
+            .catch(e => {
+                console.log(e);
+            })
+
+        }
+            return await axios.get('https://api.mercadolibre.com/sites/MLU/search', {
+                params: {
+                  'category': sendCategory ? sendCategory : 'MLU1000'
+                },
+                headers: {
+                    'Authorization': 'Bearer' + process.env.ACCESS_TOKEN
+                }
+              })
+            .then(response => response.data.results)
+            .catch(e => {
+                console.log(e);
+            })
+        
     }
 
     useEffect(() => {
@@ -40,7 +57,7 @@ const ItemList = () => {
             .catch( e => {
                 throw e
             })
-    }, [sendCategory]);
+    }, [sendCategory, sendQuery]);
 
     if(!loading){
         return(
