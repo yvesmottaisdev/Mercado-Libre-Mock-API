@@ -9,11 +9,10 @@ const Categories = () => {
     
     const [categories, setCategories] = useState([]);
     const {handleCategory } = useApplyContext();
-    
+
     const [loading, setLoading] = useState(true);
 
     const handleCategoryValue = (data) => {
-
         handleCategory(data)
 
     }
@@ -36,6 +35,7 @@ const Categories = () => {
         fetchItems()
             .then(data => {
                 setCategories(data);
+                
                 setLoading(false);
             } )
             .catch(e => { throw e });

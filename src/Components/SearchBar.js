@@ -3,20 +3,6 @@ import { useApplyContext } from '../Context/AppContext'
 
 const SearchBar = () => {
 
-  const [value, setValue] = useState('');
-  const {handleQuery} = useApplyContext();
-  const [placeholder, setPlaceholder] = useState('Zara black boots');
-
-  const handleSearch = () => {
-    
-    handleQuery(value);
-
-  }
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  }
-
   const placeholder_items = [
     "iPhone 13 Pro",
     "Samsung Galaxy S21",
@@ -32,22 +18,27 @@ const SearchBar = () => {
     "1984 by George Orwell",
   ];
 
+  const [value, setValue] = useState('');
+  const {handleQuery} = useApplyContext();
+  const [placeholder, setPlaceholder] = useState('Zara black boots');
+
+  const handleSearch = () => {
+    handleQuery(value);
+  }
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  }
 
   const textAnimation = () => {
 
     let text = placeholder_items[Math.floor(Math.random() * placeholder_items.length)];
-
-    setPlaceholder(
-      text
-    )
+    setPlaceholder(text)
 
   }
   
   useEffect(() => {
-
-    
-    setInterval(textAnimation, 3500)
-
+    setInterval(textAnimation, 3500);
   },[])
 
   return (

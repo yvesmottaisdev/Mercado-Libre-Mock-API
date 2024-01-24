@@ -25,7 +25,7 @@ const Item = (props) => {
                         <p className='item_review'></p>
                         <p className='item_name'>{title}</p>
                         <p className='item_description'>{description}</p>
-                        <p className='item_price'><span className='symbol'>£</span>{price} <span className={isAvailable ? 'available-stock' : 'notavailable-stock'}>{isAvailable ? 'In stock (' + stock + ')' : 'Not available' }</span></p>
+                        <p className='item_price'><span className='symbol'>$</span>{price} <span className={isAvailable ? 'available-stock' : 'notavailable-stock'}>{isAvailable ? 'In stock (' + stock + ')' : 'Not available' }</span></p>
                     </div>
                 </div>
             </div>

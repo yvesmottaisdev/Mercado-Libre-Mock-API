@@ -9,6 +9,7 @@ const ItemList = () => {
 
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isFaultySearch, setIsFaultySearch] = useState(false);
 
     const {sendCategory } = useApplyContext();
     const {sendQuery} = useApplyContext();
@@ -26,7 +27,13 @@ const ItemList = () => {
                 'Authorization': 'Bearer' + process.env.ACCESS_TOKEN
             }
             })
-            .then(response => response.data.results)
+            .then((response) => {
+                if(!response.headers['content-length']){
+                    setIsFaultySearch(false);
+                }
+                setIsFaultySearch(true);
+                return response.data.results;
+            })
             .catch(e => {
                 console.log(e);
             })
@@ -79,7 +86,7 @@ const ItemList = () => {
 
         return(
             <div className='item_list_holder'>
-                <LoadingComponent/>
+                <LoadingComponent />
             </div>
         );      
 

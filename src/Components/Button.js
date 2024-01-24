@@ -4,11 +4,9 @@ import "../index.css";
 const Button = (props) => {
 
 	const { total_quantity } = props;
-
 	const [quantity, setQuantity] = useState(0);
 
 	function handleAddItem() {
-
 		if(quantity === total_quantity)
 		{
 			setQuantity(quantity);
@@ -19,7 +17,6 @@ const Button = (props) => {
 	}
 
 	function handleDeleteItem() {
-
 		if(quantity === 0)
 		{
 			setQuantity(0);
